@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnAvanzar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="btnAsiento1" max="32767" attributes="0"/>
+                              <Component id="btnAsiento5" max="32767" attributes="0"/>
+                              <Component id="btnAsiento9" max="32767" attributes="0"/>
+                              <Component id="btnAsiento13" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="btnAsiento17" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnAsiento18" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btnAsiento14" max="32767" attributes="0"/>
+                              <Component id="btnAsiento10" max="32767" attributes="0"/>
+                              <Component id="btnAsiento6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnAsiento2" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btnAsiento3" max="32767" attributes="0"/>
+                                  <Component id="btnAsiento7" max="32767" attributes="0"/>
+                                  <Component id="btnAsiento11" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnAsiento12" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                      <Component id="btnAsiento8" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnAsiento4" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btnAsiento15" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAsiento19" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnAsiento20" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAsiento16" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="lblEstacionActual" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="205" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="lblEstacionActual" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAsiento3" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento2" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento4" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAsiento5" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento7" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento8" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento6" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAsiento9" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento10" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento11" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento12" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAsiento13" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento14" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento16" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento15" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnAsiento18" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento20" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento19" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnAsiento17" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnAvanzar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="btnAsiento1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsiento2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 3"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsiento3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 4"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsiento4ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 6"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 7"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 8"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 9"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 10"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 11"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento12">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 12"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento14">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 14"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento13">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 13"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento15">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 15"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento16">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 16"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento17">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 17"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento18">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 18"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento19">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 19"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAvanzar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Siguiente Estaci&#xf3;n"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAvanzarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAsiento20">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Asiento 20"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblEstacionActual">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="18" style="3"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Estacion Actual: DESCONOCIDO"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
