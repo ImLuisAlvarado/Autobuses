@@ -6,14 +6,29 @@ package mx.itson.autobuses.ui;
 import javax.swing.*;
 import mx.itson.autobuses.entidades.Boleto;
 
+
+/**
+ * Clase AutobusesFrame que extiende JFrame y representa la interfaz gráfica
+ * para la gestión de reservas de asientos en un autobús.
+ * @author ImLuisAlvarado
+ */
+
 public class AutobusesFrame extends javax.swing.JFrame {
     
     private boolean[] asientosDisponibles = new boolean[20]; 
     private String[] estaciones = {"NAVOJOA", "OBREGÓN", "EMPALME", "GUAYMAS", "HERMOSILLO","SANTA ANA","MAGDALENA","IMURIS","NOGALES"};
-    private int estacionActual = -1;
+    private int estacionActual = 0;
     private int[] pasajerosPorEstacion = new int[estaciones.length]; 
+    private String[] pasajeros = new String [20];
     private String[] destinos = new String[20];
-    
+    private String[] origenes = new String[20];
+    private double[] precios = new double[20];
+    private double totalIngresos = 0.0;
+
+    /**
+     * Constructor de la clase AutobusesFrame.
+     * Inicializa los componentes de la interfaz y configura los botones.
+     */
     public AutobusesFrame() {
         initComponents();
         configurarBotones();
@@ -21,7 +36,12 @@ public class AutobusesFrame extends javax.swing.JFrame {
         asientosDisponibles[i] = true;
     }
     }
-    
+    /**
+     * Verifica si el destino seleccionado ya ha sido alcanzado.
+     * 
+     * @param destinoSeleccionado El destino a verificar.
+     * @return true si el destino ya ha sido alcanzado, false en caso contrario.
+     */
     private boolean destinoYaAlcanzado(String destinoSeleccionado) {
     for (int i = 0; i < estacionActual; i++) {
         if (estaciones[i].equals(destinoSeleccionado)) {
@@ -31,30 +51,78 @@ public class AutobusesFrame extends javax.swing.JFrame {
     return false;
 }
 
-    private void reservarAsiento(int numeroAsiento, JButton boton) {
-     if (!asientosDisponibles[numeroAsiento - 1]) {
-         JOptionPane.showMessageDialog(this, "El asiento " + numeroAsiento + " ya está reservado.");
-     } else {
-         String pasajero = JOptionPane.showInputDialog(this, "Ingresa el nombre del pasajero:");
-         if (pasajero != null && !pasajero.isBlank()) {
-             String destino = (String) JOptionPane.showInputDialog(this, "Selecciona el destino del pasajero:",
-                     "Destino", JOptionPane.QUESTION_MESSAGE, null, estaciones, estaciones[0]);
+    /**
+     * Calcula el precio del boleto basado en el origen y el destino.
+     * 
+     * @param origen La estación de origen.
+     * @param destino La estación de destino.
+     * @return El precio calculado del boleto.
+     */
+    private double calcularPrecio(String origen, String destino) {
+    int indiceOrigen = -1;
+    int indiceDestino = -1;
 
-             // Validar que el destino no haya sido alcanzado
-             if (destino != null && destinoYaAlcanzado(destino)) {
-                 JOptionPane.showMessageDialog(this, "El destino " + destino + " ya ha sido alcanzado.");
-             } else if (destino != null) {
-                 asientosDisponibles[numeroAsiento - 1] = false;
-                 boton.setEnabled(false);
-                 destinos[numeroAsiento - 1] = destino;
-                 JOptionPane.showMessageDialog(this, "Asiento " + numeroAsiento + " reservado para " + pasajero + " con destino a " + destino);
-                 Boleto boleto = new Boleto(numeroAsiento, pasajero);
-                 System.out.println(boleto.toString());
+    for (int i = 0; i < estaciones.length; i++) {
+        if (estaciones[i].equals(origen)) {
+            indiceOrigen = i;
+        }
+        if (estaciones[i].equals(destino)) {
+            indiceDestino = i;
+        }
+    }
+
+        return (indiceDestino - indiceOrigen) * 50.0;
+}
+
+    
+     /**
+     * Reserva un asiento para un pasajero.
+     * 
+     * @param numeroAsiento El número del asiento a reservar.
+     * @param boton El botón correspondiente al asiento.
+     */
+    private void reservarAsiento(int numeroAsiento, JButton boton) {
+    if (!asientosDisponibles[numeroAsiento - 1]) {
+        JOptionPane.showMessageDialog(this, "El asiento " + numeroAsiento + " ya está reservado.");
+    } else {
+        String pasajero = JOptionPane.showInputDialog(this, "Ingresa el nombre del pasajero:");
+        if (pasajero != null && !pasajero.isBlank()) {
+
+            String origen = estaciones[estacionActual];
+            
+            String destino = (String) JOptionPane.showInputDialog(this, "Selecciona el destino del pasajero:",
+                    "Destino", JOptionPane.QUESTION_MESSAGE, null, estaciones, estaciones[0]);
+
+            if (origen != null && destino != null) {
+                if (destinoYaAlcanzado(destino)) {
+                    JOptionPane.showMessageDialog(this, "El destino " + destino + " ya ha sido alcanzado.");
+                } else if (destino.equals(origen)) {
+                    JOptionPane.showMessageDialog(this, "El origen y destino no pueden ser iguales.");
+                } else {
+                    double precio = calcularPrecio(origen, destino);
+                    asientosDisponibles[numeroAsiento - 1] = false;
+                    boton.setEnabled(false);
+                    pasajeros[numeroAsiento -1] = pasajero;
+                    destinos[numeroAsiento - 1] = destino;
+                    origenes[numeroAsiento - 1] = origen;
+                    precios[numeroAsiento - 1] = precio;
+                    totalIngresos += precio;
+
+                    JOptionPane.showMessageDialog(this, "Asiento " + numeroAsiento + " reservado para " + pasajero +
+                            "\nOrigen: " + origen + "\nDestino: " + destino + "\nPrecio: $" + precio);
+                }
             }
         }
     }
 }
 
+
+    /**
+     * Configura los botones de los asientos y les asigna la acción de reservar.
+     * Este método itera sobre un arreglo de botones que representan los asientos
+     * y les asigna un ActionListener que llama al método reservarAsiento
+     * cuando se hace clic en el botón correspondiente.
+     */
     private void configurarBotones() {
         JButton[] botones = {btnAsiento1, btnAsiento2, btnAsiento3, btnAsiento4, btnAsiento5,
             btnAsiento6, btnAsiento7, btnAsiento8, btnAsiento9, btnAsiento10,
@@ -67,6 +135,13 @@ public class AutobusesFrame extends javax.swing.JFrame {
             boton.addActionListener(evt -> reservarAsiento(numeroAsiento, boton));
     }
 }
+    /**
+     * Avanza a la siguiente estación y actualiza la interfaz.
+     * Este método incrementa el índice de la estación actual, actualiza la etiqueta
+     * que muestra la estación actual y habilita los asientos de los pasajeros que
+     * bajan en la nueva estación. Si se alcanza la última estación, se genera un
+     * reporte final de las reservas.
+     */
     private void avanzarEstacion() {
     if (estacionActual < estaciones.length - 1) {
         estacionActual++;
@@ -75,9 +150,9 @@ public class AutobusesFrame extends javax.swing.JFrame {
         for (int i = 0; i < destinos.length; i++) {
             if (destinos[i] != null && destinos[i].equals(estaciones[estacionActual])) {
                 pasajerosBajaron++;
-                // Asiento disponible nuevamente
+
                 asientosDisponibles[i] = true;
-                // Habilitar el botón del asiento correspondiente
+
                 JButton boton = obtenerBotonPorNumero(i + 1);
                 if (boton != null) {
                     boton.setEnabled(true);
@@ -91,32 +166,68 @@ public class AutobusesFrame extends javax.swing.JFrame {
         pasajerosPorEstacion[estacionActual] = pasajerosBajaron;
     } else {
         JOptionPane.showMessageDialog(this, "Has llegado a la última estación.");
-    }
+        if (estacionActual == estaciones.length - 1) {
+            generarReporteFinal();
 }
 
-private JButton obtenerBotonPorNumero(int numeroAsiento) {
-    switch (numeroAsiento) {
-        case 1: return btnAsiento1;
-        case 2: return btnAsiento2;
-        case 3: return btnAsiento3;
-        case 4: return btnAsiento4;
-        case 5: return btnAsiento5;
-        case 6: return btnAsiento6;
-        case 7: return btnAsiento7;
-        case 8: return btnAsiento8;
-        case 9: return btnAsiento9;
-        case 10: return btnAsiento10;
-        case 11: return btnAsiento11;
-        case 12: return btnAsiento12;
-        case 13: return btnAsiento13;
-        case 14: return btnAsiento14;
-        case 15: return btnAsiento15;
-        case 16: return btnAsiento16;
-        case 17: return btnAsiento17;
-        case 18: return btnAsiento18;
-        case 19: return btnAsiento19;
-        case 20: return btnAsiento20;
-        default: return null;
+    }
+}
+    
+    /**
+     * Genera un reporte final de las reservas realizadas y muestra los ingresos totales.
+     * Este método compila la información de los pasajeros, sus orígenes, destinos, precios
+     * y el total de ingresos generados, y muestra esta información en un cuadro de diálogo.
+     */
+    private void generarReporteFinal() {
+    StringBuilder reporte = new StringBuilder("Reporte General:\n\n");
+    reporte.append(String.format("%-15s %-15s %-15s %-10s %-10s\n", "Nombre", "Origen", "Destino", "Precio", "Asiento"));
+
+    for (int i = 0; i < destinos.length; i++) {
+        if (destinos[i] != null) {
+            reporte.append(String.format("%-15s %-15s %-15s $%-9.2f %-10d\n", 
+                    pasajeros[i],
+                    origenes[i], 
+                    destinos[i], 
+                    precios[i], 
+                    i + 1));
+        }
+    }
+
+    reporte.append("\nTotal Ingresos: $" + totalIngresos);
+    JOptionPane.showMessageDialog(this, reporte.toString());
+}
+    
+    /**
+     * Obtiene el botón correspondiente al número de asiento especificado.
+     * Este método busca en el arreglo de botones y devuelve el botón
+     * que corresponde al número de asiento proporcionado.
+     *
+     * @param numeroAsiento El número del asiento (1-20) para el cual se desea obtener el botón.
+     * @return El JButton correspondiente al número de asiento, o null si no se encuentra.
+     */
+    private JButton obtenerBotonPorNumero(int numeroAsiento) {
+        switch (numeroAsiento) {
+            case 1: return btnAsiento1;
+            case 2: return btnAsiento2;
+            case 3: return btnAsiento3;
+            case 4: return btnAsiento4;
+            case 5: return btnAsiento5;
+            case 6: return btnAsiento6;
+            case 7: return btnAsiento7;
+            case 8: return btnAsiento8;
+            case 9: return btnAsiento9;
+            case 10: return btnAsiento10;
+            case 11: return btnAsiento11;
+            case 12: return btnAsiento12;
+            case 13: return btnAsiento13;
+            case 14: return btnAsiento14;
+            case 15: return btnAsiento15;
+            case 16: return btnAsiento16;
+            case 17: return btnAsiento17;
+            case 18: return btnAsiento18;
+            case 19: return btnAsiento19;
+            case 20: return btnAsiento20;
+            default: return null;
     }
 }
 
@@ -242,7 +353,7 @@ private JButton obtenerBotonPorNumero(int numeroAsiento) {
         btnAsiento20.setText("Asiento 20");
 
         lblEstacionActual.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
-        lblEstacionActual.setText("Estacion Actual: DESCONOCIDO");
+        lblEstacionActual.setText("Estacion Actual: NAVOJOA");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

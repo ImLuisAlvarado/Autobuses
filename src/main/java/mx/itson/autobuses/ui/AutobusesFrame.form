@@ -329,7 +329,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="18" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Estacion Actual: DESCONOCIDO"/>
+        <Property name="text" type="java.lang.String" value="Estacion Actual: NAVOJOA"/>
       </Properties>
     </Component>
   </SubComponents>
